@@ -1,0 +1,25 @@
+{
+    "products": [
+        {
+            "id": 0,
+            "title": "Notebook ASUS",
+            "price": 250000,
+            "description": "really nice notebook",
+            "image": "./not_asus.jpg"
+        },
+        {
+            "id": 1,
+            "title": "8GB ram Corsair RGB",
+            "price": 8000,
+            "description": "really nice ram",
+            "image": "./not_asus.jpg"
+        },
+        {
+            "id": 2,
+            "title": "Geforce RTX 3080ti",
+            "price": 500000,
+            "description": "really nice graphic videocard",
+            "image": "./not_asus.jpg"
+        }
+    ]
+}
