@@ -1,25 +1,25 @@
 {
-    "products": [
-        {
-            "id": 0,
-            "title": "Notebook ASUS",
-            "price": 250000,
-            "description": "really nice notebook",
-            "image": "./not_asus.jpg"
-        },
-        {
-            "id": 1,
-            "title": "8GB ram Corsair RGB",
-            "price": 8000,
-            "description": "really nice ram",
-            "image": "./not_asus.jpg"
-        },
-        {
-            "id": 2,
-            "title": "Geforce RTX 3080ti",
-            "price": 500000,
-            "description": "really nice graphic videocard",
-            "image": "./not_asus.jpg"
-        }
-    ]
+  "products": [
+    {
+      "id": 0,
+      "title": "Notebook ASUS",
+      "price": 2000,
+      "description": "really nice notebook",
+      "image": "https://s3-sa-east-1.amazonaws.com/saasargentina/jogDUSFSRq5Wt6ccnW9t/imagen"
+    },
+    {
+      "id": 1,
+      "title": "8GB ram Corsair RGB",
+      "price": 90,
+      "description": "really nice ram",
+      "image": "https://www.venex.com.ar/products_images/1558110174_corsairvengeancecmw16gx4m2c3200c16modulodememoria16gbddr43200mhz.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Geforce RTX 3080ti",
+      "price": 2000,
+      "description": "really nice graphic videocard",
+      "image": "https://m.media-amazon.com/images/I/71ZmRXZcnXS._AC_SL1500_.jpg"
+    }
+  ]
 }
