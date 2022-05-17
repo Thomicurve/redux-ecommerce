@@ -3,9 +3,6 @@ export const cartReducer = (state = [], action) => {
     case "@cart/add-product": {
       return [...state, { ...action.payload, id: state.length + 1 }];
     }
-    case "@cart/get-products": {
-      return state;
-    }
     default:
       return state;
   }

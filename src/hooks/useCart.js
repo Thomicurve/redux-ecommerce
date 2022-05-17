@@ -1,22 +1,26 @@
-import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getFinalInvoice, getFinalPrice } from "../reducers/invoiceReducer";
 
 const useCart = () => {
-  const products = useSelector((state) => state.cart);
-  const [cartProducts, setCartProducts] = useState({});
+  const products = useSelector(state => state.cart);
+  const invoice = useSelector(state => state.invoice)
+  const dispatch = useDispatch();
 
-  const formatCartProducts = () => {
-    let filteredCart = {};
-    products.forEach((product) => {
-      filteredCart[product.title] = !filteredCart[product.title]
-        ? { ...product, amount: 1 }
-        : { ...product, amount: filteredCart[product.title].amount + 1 };
-    });
-
-    setCartProducts(filteredCart);
+  const formatCartProducts = () => {    
+    dispatch(getFinalInvoice(products));
   };
 
-  return { cartProducts, formatCartProducts, cartAmount: products.length };
+  const getTotalPrice = () => {
+    dispatch(getFinalPrice());
+  }
+
+  useEffect(() => {
+    formatCartProducts();
+    getTotalPrice();
+  }, [])
+
+  return { cartAmount: products.length, invoice };
 };
 
 export default useCart;
