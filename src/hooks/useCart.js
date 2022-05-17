@@ -3,13 +3,20 @@ import { useEffect } from "react";
 import { getFinalInvoice, getFinalPrice } from "../reducers/invoiceReducer";
 
 const useCart = () => {
-  const products = useSelector(state => state.cart);
+  const cartProducts = useSelector(state => state.cart);
   const invoice = useSelector(state => state.invoice)
   const dispatch = useDispatch();
 
-  const formatCartProducts = () => {    
-    dispatch(getFinalInvoice(products));
+  const formatCartProducts = () => {
+    dispatch(getFinalInvoice(cartProducts));
   };
+
+  const formatPrice = (price) => {
+    return new Intl.NumberFormat("de-DE", {
+      style: "currency",
+      currency: "EUR"
+    }).format(price)
+  }
 
   const getTotalPrice = () => {
     dispatch(getFinalPrice());
@@ -18,9 +25,9 @@ const useCart = () => {
   useEffect(() => {
     formatCartProducts();
     getTotalPrice();
-  }, [])
+  }, [cartProducts])
 
-  return { cartAmount: products.length, invoice };
+  return { cartAmount: cartProducts.length, invoice, cartProducts, formatPrice };
 };
 
 export default useCart;
